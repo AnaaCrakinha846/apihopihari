@@ -1,10 +1,10 @@
-console.log('Olá mundo!');
 const express = require("express");
 const app = express();
 const cors = require("cors");
 const helmet = require("helmet");
 const bodyParser = require("body-parser");
 
+const usuariosRoute = require("./routes/login.routes");
 
 app.use(cors());
 app.use(helmet());
@@ -22,4 +22,8 @@ app.use((req, res, next) => {
         res.header("Acces-Control-Allow-Methods", "PUT, POST, GET, PATCH, DELETE");
     }
     next();
-});
+}); 
+
+app.use ("/usuarios", usuariosRoute);
+
+module.exports = app;
