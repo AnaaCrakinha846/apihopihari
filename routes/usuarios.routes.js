@@ -6,3 +6,6 @@ router.post('/:id', usuariosController.atualizarusuario);
 router.post('/',()=>{console.log("Rota de login")});
 
 module.exports = router;
+
+router.post('/login', usuariosController.login
+);
